@@ -1,0 +1,11 @@
+tmp/*
+*.log
+overmind.sock
+pnpm-lock.yaml
+run-pty.json
+vite.config.ts
+.env*
+node_modules/*
+
+# Private individual user cursor rules
+.cursor/rules/_*.mdc
