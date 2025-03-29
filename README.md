@@ -1,56 +1,32 @@
 # Rails AI Rules
 
-A comprehensive collection of rules, patterns, and standards for developing Ruby on Rails applications using AI assistance effectively.
+A comprehensive collection of rules, patterns, and standards for effectively developing Ruby on Rails applications with AI assistance.
 
 ## Overview
 
-This project provides a structured set of rules and guidelines for AI-assisted Rails development, ensuring consistent, high-quality code production across projects.
+This repository provides structured guidelines to ensure consistent and high-quality code production in AI-assisted Rails development.
 
 ## Project Structure
 
-## Core Components
+The repository is organized into the following directories and files:
 
-### Rule Categories
+- **`docs/architecture.md`**: Details the system design and architectural principles of the project.
+- **`docs/patterns/`**: Contains various implementation patterns utilized within the project.
+- **`docs/specs/`**: Houses component specifications and standards.
+- **`docs/tdd.md`**: Outlines the Test-Driven Development workflow adopted in the project.
 
-- **000-099**: Core standards and formats
-- **100-199**: Language and framework rules
-- **200-299**: Frontend and design rules
-- **300-399**: Testing standards
-- **400-499**: Tool configurations
-- **800-899**: Workflows
-- **900-999**: Templates
+## Rule Categories
 
-### Documentation
+Rules within this project are numerically categorized as follows:
 
-- **Architecture**: System design and principles in `docs/architecture.md`
-- **Patterns**: Implementation patterns in `docs/patterns/`
-- **Specifications**: Component specs in `docs/specs/`
+- **000-099**: Core standards and formats.
+- **100-199**: Language and framework-specific rules.
+- **200-299**: Frontend and design-related rules.
+- **300-399**: Testing standards and best practices.
+- **400-499**: Tool configurations and setups.
+- **800-899**: Workflows and process guidelines.
+- **900-999**: Templates and boilerplate code.
 
-## Key Features
-
-- Test-Driven Development (TDD) workflow
-- Rails 8+ best practices
-- ViewComponent patterns
-- Hotwire (Turbo + Stimulus) implementation
-- Modern frontend architecture
-- Comprehensive testing strategy
-- Security-first approach
-
-## Implementation Patterns
-
-### Ruby/Rails Patterns
-- Service Objects
-- Form Objects
-- Query Objects
-- View Objects
-- Policy Objects
-- Plain Old Ruby Objects (POROs)
-
-### Frontend Patterns
-- ViewComponents
-- Stimulus Controllers
-- Turbo Frames
-- TailwindCSS Architecture
 
 ## Getting Started
 
