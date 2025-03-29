@@ -10,32 +10,39 @@ This repository provides structured guidelines, best practices, and standard pro
 
 This project distinguishes between different types of rules and documentation:
 
-1.  **Generic Documentation (`docs/`)**:
-    *   Contains foundational knowledge, architectural decisions, patterns, specifications, and workflows applicable to the project regardless of the specific AI tool being used.
-    *   Files like `docs/architecture.md`, `docs/patterns/`, `docs/specs/`, `docs/tdd.md`, and `docs/erd.mmd` provide essential context for both human developers and AI assistants.
-    *   AI tools should be configured to reference these documents for background information and project standards.
+1.  **Generic System Prompt (`generic.md`)**:
+    *   This file contains fundamental behavioral instructions and operational modes (e.g., `KEY_REQUIREMENTS`, `PLANNING_MODE`, `ARCHITECHTURE_MODE`, `DEBUG_MODE`) for the AI assistant.
+    *   It sets the baseline for interaction style, code quality expectations, and specific workflows.
+    *   This can often be used as a base system prompt for the AI tool.
 
-2.  **Cursor-Specific Rules (`.cursorrules`, `.cursor/rules/*.mdc`)**:
+2.  **Generic Documentation (`docs/`)**:
+    *   Contains foundational project knowledge, architectural decisions, patterns, specifications, and workflows applicable regardless of the specific AI tool being used.
+    *   Files like `docs/architecture.md`, `docs/patterns/`, `docs/specs/`, `docs/tdd.md`, and `docs/erd.mmd` provide essential context for both human developers and AI assistants.
+    *   AI tools should be configured to reference these documents for background information and project standards, often directed by tool-specific rules.
+
+3.  **Cursor-Specific Rules (`.cursorrules`, `.cursor/rules/*.mdc`)**:
     *   These files are formatted specifically for use with the Cursor IDE.
-    *   They might contain rules leveraging Cursor's specific features or syntax (like `.mdc` files).
+    *   They might contain rules leveraging Cursor's specific features or syntax (like `.mdc` files) and can reference both `generic.md` and files within `docs/`.
     *   Refer to Cursor's documentation for how to integrate these rules effectively. The `.cursorrules` file is generally deprecated in favor of the `.cursor/rules/` directory structure.
 
-3.  **Cline-Specific Rules (`.clinerules`)**:
+4.  **Cline-Specific Rules (`.clinerules`)**:
     *   This file contains rules formatted for use with the Cline tool.
-    *   It defines project-specific instructions, preferences, and constraints directly consumable by Cline.
+    *   It defines project-specific instructions, preferences, and constraints directly consumable by Cline, potentially incorporating or referencing instructions from `generic.md` and context from `docs/`.
 
 ## Integrating Rules with AI Tools
 
--   **Cursor:** Place `.mdc` rule files within the `.cursor/rules/` directory in your project root. Cursor will automatically pick them up.
--   **Cline:** Ensure the `.clinerules` file is present in the project root. Cline uses this file for its configuration.
--   **Generic Docs:** Both tools can be instructed (often within their specific rule files or prompts) to consult the `docs/` directory for broader context, patterns, and architectural guidelines.
+-   **System Prompt:** Use the content of `generic.md` as a base system prompt if your AI tool supports it.
+-   **Cursor:** Place `.mdc` rule files within the `.cursor/rules/` directory. These rules can instruct Cursor to adhere to `generic.md` principles and consult `docs/`.
+-   **Cline:** Ensure the `.clinerules` file is present. This file should incorporate the desired behaviors from `generic.md` and reference `docs/` as needed.
+-   **Generic Docs:** Tool-specific rules (`.clinerules`, `.mdc`) should guide the AI on when and how to use the information within the `docs/` directory.
 
 ## Project Structure Overview
 
 -   **`README.md`**: This file - provides an overview and explains rule organization.
+-   **`generic.md`**: Base system prompt and behavioral instructions for the AI.
 -   **`.clinerules`**: Rules specifically for the Cline AI tool.
 -   **`.cursorrules` / `.cursor/rules/`**: Rules specifically for the Cursor IDE (prefer `.cursor/rules/*.mdc`).
--   **`docs/`**: Generic documentation (architecture, patterns, specs, TDD, ERD, decisions). Essential context for any AI or developer.
+-   **`docs/`**: Generic project documentation (architecture, patterns, specs, TDD, ERD, decisions). Essential context for any AI or developer.
 -   **`LICENSE`**: Project license information.
 -   **`CONTRIBUTING.md`**: (Optional) Guidelines for contributing to this ruleset.
 
@@ -54,13 +61,13 @@ This ruleset assumes a modern Rails development stack. Key technologies and conc
 ## Getting Started with This Template
 
 1.  **Clone/Fork:** Start with this repository as your base.
-2.  **Customize `docs/`:** Update generic documentation (`architecture.md`, `erd.mmd`, patterns, specs) to match your project.
-3.  **Configure AI Rules:**
-    *   Populate/modify `.cursor/rules/` with `.mdc` files for Cursor.
-    *   Populate/modify `.clinerules` for Cline.
-    *   Ensure AI rule files reference the `docs/` for context where needed.
-4.  **Integrate:** Set up your AI tools to use the configured rules.
-5.  **Communicate:** Ensure your team understands the structure and how to use/maintain the rules and documentation.
+2.  **Customize `generic.md`:** Adapt the base AI instructions to your team's preferences.
+3.  **Customize `docs/`:** Update generic documentation (`architecture.md`, `erd.mmd`, patterns, specs) to match your project.
+4.  **Configure AI Rules:**
+    *   Populate/modify `.cursor/rules/` with `.mdc` files for Cursor, referencing `generic.md` and `docs/`.
+    *   Populate/modify `.clinerules` for Cline, incorporating `generic.md` principles and referencing `docs/`.
+5.  **Integrate:** Set up your AI tools to use the configured system prompts and rules.
+6.  **Communicate:** Ensure your team understands the structure and how to use/maintain the rules and documentation.
 
 ## License
 
