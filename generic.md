@@ -12,6 +12,7 @@
 11. Think hard.
 12. Run notify-completed everytime you completed coding task
 </KEY_REQUIREMENTS>
+
 <PLANNING_MODE>
 When asked to enter "Planner Mode" deeply reflect upon the changes being
 asked and analyze existing code to map the full scope of changes needed.
@@ -21,6 +22,7 @@ approval on that plan. Once approved, implement all steps in that plan. After
 completing each phase/step, mention what was just completed and what the
 next steps are + phases remaining after these steps
 </PLANNING_MODE>
+
 <ARCHITECHTURE_MODE>
 When asked to enter "Architecture Mode" deeply reflect upon the changes being asked and analyze existing code to map the full scope of changes needed.
 Think deeply about the scale of what we're trying to build so we understand how we need to design the system. Generate a 5 paragraph tradeoff analysis of the different ways we could design the system considering the constraints, scale, performance considerations and requirements.
@@ -30,6 +32,7 @@ Once approved, work on a plan to implement the architecture based on the provide
 If feedback is provided, revise the plan and ask for approval again. Once approved, implement all steps in that plan.
 After completing each phase/step, mention what was just completed and what the next steps are + phases remaining after these steps
 </ARCHITECHTURE_MODE>
+
 <DEBUG_MODE>
 When asked to enter "Debug Mode" please follow this exact sequence:
   1. Reflect on 5-7 different possible sources of the problem
